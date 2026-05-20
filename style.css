@@ -125,7 +125,7 @@ body::before{
 }
 
 /* =========================================
-   BLOBS ORGÁNICOS
+   BLOBS
 ========================================= */
 
 .blob{
@@ -215,7 +215,7 @@ body::before{
 
 .hero{
 
-    min-height:100vh;
+    min-height:92vh;
 
     padding:40px;
 
@@ -284,7 +284,7 @@ body::before{
 
     letter-spacing:-5px;
 
-    margin-bottom:40px;
+    margin-bottom:25px;
 
     background:
     linear-gradient(
@@ -348,7 +348,7 @@ body::before{
 
     gap:120px;
 
-    padding:220px 40px;
+    padding:140px 40px;
 
     position:relative;
 }
@@ -397,7 +397,7 @@ body::before{
 
 .projects{
 
-    padding:0 40px 220px;
+    padding:0 40px 120px;
 
     position:relative;
 }
@@ -408,23 +408,23 @@ body::before{
 
     grid-template-columns:1.2fr .8fr;
 
-    gap:100px;
+    gap:80px;
 
     align-items:center;
 
-    margin-bottom:280px;
+    margin-bottom:140px;
 
     position:relative;
 }
 
 .project:nth-child(2){
 
-    margin-left:10vw;
+    margin-left:6vw;
 }
 
 .project:nth-child(3){
 
-    margin-right:8vw;
+    margin-right:5vw;
 }
 
 .project.reverse{
@@ -451,14 +451,22 @@ body::before{
     overflow:hidden;
 
     border-radius:
-    42% 58% 63% 37% /
-    31% 39% 61% 69%;
+    38% 62% 55% 45% /
+    42% 38% 62% 58%;
 
     transition:
     border-radius 1.5s ease,
     transform 1s ease;
 
-    transform:rotate(-3deg);
+    transform:rotate(-2deg);
+
+    aspect-ratio:1 / 1;
+
+    width:100%;
+
+    max-width:760px;
+
+    margin:auto;
 
 }
 
@@ -483,26 +491,29 @@ body::before{
 .project:hover .project-image{
 
     border-radius:
-    58% 42% 31% 69% /
-    61% 52% 48% 39%;
+    48% 52% 45% 55% /
+    52% 42% 58% 48%;
 
     transform:
-    rotate(2deg)
-    scale(1.02);
+    rotate(1deg)
+    scale(1.015);
 
 }
 
 .project-image img{
 
     width:100%;
-
-    height:85vh;
+    height:100%;
 
     object-fit:cover;
 
+    object-position:center;
+
+    transform:scale(1.12);
+
     filter:
     saturate(115%)
-    contrast(105%);
+    contrast(104%);
 
     transition:
     transform 2s ease,
@@ -512,7 +523,7 @@ body::before{
 
 .project:hover img{
 
-    transform:scale(1.08);
+    transform:scale(1.16);
 
     filter:
     saturate(135%)
@@ -527,8 +538,8 @@ body::before{
 
     position:relative;
 
-    width:480px;
-    height:480px;
+    width:420px;
+    height:420px;
 
     border-radius:50%;
 
@@ -546,7 +557,7 @@ body::before{
 
     justify-content:center;
 
-    padding:70px;
+    padding:60px;
 
     box-shadow:
     0 30px 80px rgba(0,0,0,.08);
@@ -582,7 +593,7 @@ body::before{
 
     font-family:'Cormorant Garamond', serif;
 
-    font-size:4rem;
+    font-size:3.4rem;
 
     line-height:.9;
 
@@ -597,7 +608,7 @@ body::before{
 
     color:var(--gray);
 
-    max-width:260px;
+    max-width:240px;
 }
 
 /* =========================================
@@ -606,7 +617,7 @@ body::before{
 
 .quote{
 
-    padding:280px 40px;
+    padding:160px 40px;
 
     text-align:center;
 
@@ -651,7 +662,7 @@ body::before{
 
     font-weight:300;
 
-    max-width:1100px;
+    max-width:900px;
 
     margin:auto;
 }
@@ -662,7 +673,7 @@ body::before{
 
 .contact{
 
-    padding:140px 40px 100px;
+    padding:100px 40px 80px;
 
     position:relative;
 }
@@ -739,6 +750,13 @@ body::before{
         height:auto;
 
         border-radius:40px;
+
+        padding:40px;
+    }
+
+    .project-image{
+
+        max-width:100%;
     }
 
 }
@@ -750,6 +768,8 @@ body::before{
         grid-template-columns:1fr;
 
         gap:60px;
+
+        padding:100px 25px;
     }
 
     .project,
@@ -759,6 +779,8 @@ body::before{
 
         margin-left:0 !important;
         margin-right:0 !important;
+
+        margin-bottom:100px;
     }
 
     .project.reverse .project-image,
@@ -767,9 +789,26 @@ body::before{
         order:unset;
     }
 
+    .projects{
+        padding:0 25px 80px;
+    }
+
+    .quote{
+        padding:120px 25px;
+    }
+
+    .contact{
+        padding:80px 25px;
+    }
+
+    .project-image{
+
+        aspect-ratio:auto;
+    }
+
     .project-image img{
 
-        height:60vh;
+        height:65vh;
     }
 
     .manifesto h2,

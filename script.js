@@ -71,7 +71,7 @@ interactive.forEach((el) => {
 
 
 // ========================================
-// HERO PARALLAX ORGÁNICO
+// HERO PARALLAX
 // ========================================
 
 const heroTitle =
@@ -101,7 +101,7 @@ document.addEventListener("mousemove", (e) => {
 
 
 // ========================================
-// BLOBS FLOTANTES
+// BLOBS
 // ========================================
 
 const blobs =
@@ -154,13 +154,13 @@ window.addEventListener("mousemove", (e) => {
     projects.forEach((project, index) => {
 
         const intensity =
-        (index + 1) * 0.12;
+        (index + 1) * 0.08;
 
         project.style.transform = `
         perspective(1800px)
         rotateX(${rotateX * intensity}deg)
         rotateY(${rotateY * intensity}deg)
-        translateY(${Math.sin(Date.now() * 0.001 + index) * 10}px)
+        translateY(${Math.sin(Date.now() * 0.001 + index) * 6}px)
         `;
 
     });
@@ -181,19 +181,19 @@ organicImages.forEach((img, index) => {
 
     function morph(){
 
-        time += 0.01;
+        time += 0.006;
 
         const radius1 =
-        42 + Math.sin(time) * 8;
+        38 + Math.sin(time) * 5;
 
         const radius2 =
-        58 + Math.cos(time) * 8;
+        62 + Math.cos(time) * 5;
 
         const radius3 =
-        63 + Math.sin(time * 1.4) * 6;
+        55 + Math.sin(time * 1.4) * 4;
 
         const radius4 =
-        37 + Math.cos(time * 1.2) * 6;
+        45 + Math.cos(time * 1.2) * 4;
 
         img.style.borderRadius = `
         ${radius1}% ${radius2}%
@@ -212,7 +212,7 @@ organicImages.forEach((img, index) => {
 
 
 // ========================================
-// REVEAL CINEMÁTICO
+// REVEAL
 // ========================================
 
 const reveal =
@@ -225,7 +225,7 @@ reveal.forEach((el) => {
     el.style.opacity = "0";
 
     el.style.transform +=
-    " translateY(140px)";
+    " translateY(80px)";
 
     el.style.transition =
     "all 1.6s cubic-bezier(.19,1,.22,1)";
@@ -245,7 +245,7 @@ function revealElements(){
 
             el.style.transform =
             el.style.transform.replace(
-            "translateY(140px)",
+            "translateY(80px)",
             "translateY(0px)"
             );
 
@@ -261,7 +261,7 @@ revealElements();
 
 
 // ========================================
-// TÍTULOS VIVOS — SUAVE / CINEMÁTICO
+// TÍTULOS VIVOS
 // ========================================
 
 const titles =
@@ -324,7 +324,7 @@ function breathing(){
     breath += 0.02;
 
     const scale =
-    1 + Math.sin(breath) * 0.02;
+    1 + Math.sin(breath) * 0.015;
 
     quote.style.transform =
     `scale(${scale})`;
@@ -350,12 +350,12 @@ window.addEventListener("scroll", () => {
     images.forEach((img, index) => {
 
         const speed =
-        (index + 1) * 0.04;
+        (index + 1) * 0.015;
 
         img.style.transform = `
         translateY(${scrollY * speed}px)
-        scale(1.08)
-        rotate(${Math.sin(scrollY * 0.001) * 2}deg)
+        scale(1.12)
+        rotate(${Math.sin(scrollY * 0.0006) * 1}deg)
         `;
 
     });
