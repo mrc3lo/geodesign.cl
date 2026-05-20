@@ -1,0 +1,792 @@
+/* =========================================
+   RESET
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#f7f5f2;
+
+    --text:#111111;
+
+    --gray:#6f6f73;
+
+    --pink:#ff6ec7;
+    --violet:#8b7dff;
+    --cyan:#8ad8ff;
+    --yellow:#fff1a8;
+
+}
+
+/* =========================================
+   BASE
+========================================= */
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(255,120,220,.18),
+    transparent 28%),
+
+    radial-gradient(circle at bottom right,
+    rgba(120,180,255,.18),
+    transparent 35%),
+
+    radial-gradient(circle at center,
+    rgba(255,210,120,.10),
+    transparent 40%),
+
+    var(--bg);
+
+    color:var(--text);
+
+    font-family:'Space Grotesk', sans-serif;
+
+    overflow-x:hidden;
+
+    position:relative;
+
+}
+
+/* =========================================
+   IRIDISCENCIA
+========================================= */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:-30%;
+
+    background:
+
+    conic-gradient(
+        from 180deg,
+        rgba(255,120,220,.12),
+        rgba(120,180,255,.12),
+        rgba(255,240,180,.12),
+        rgba(180,255,220,.12),
+        rgba(255,120,220,.12)
+    );
+
+    animation:iridescent 30s linear infinite;
+
+    filter:blur(120px);
+
+    z-index:-5;
+
+    opacity:.8;
+
+}
+
+@keyframes iridescent{
+
+    0%{
+        transform:rotate(0deg) scale(1);
+    }
+
+    100%{
+        transform:rotate(360deg) scale(1.3);
+    }
+
+}
+
+/* =========================================
+   NOISE
+========================================= */
+
+.noise{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:.05;
+
+    background-image:url("https://grainy-gradients.vercel.app/noise.svg");
+
+    mix-blend-mode:multiply;
+
+    z-index:999;
+}
+
+/* =========================================
+   BLOBS ORGÁNICOS
+========================================= */
+
+.blob{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(100px);
+
+    opacity:.45;
+
+    pointer-events:none;
+
+    mix-blend-mode:multiply;
+
+    z-index:-3;
+
+}
+
+.blob1{
+
+    width:420px;
+    height:420px;
+
+    background:var(--pink);
+
+    top:-5%;
+    left:-5%;
+}
+
+.blob2{
+
+    width:520px;
+    height:520px;
+
+    background:var(--cyan);
+
+    bottom:-10%;
+    right:-10%;
+}
+
+.blob3{
+
+    width:360px;
+    height:360px;
+
+    background:var(--yellow);
+
+    top:40%;
+    left:45%;
+}
+
+/* =========================================
+   CURSOR
+========================================= */
+
+.cursor{
+
+    width:24px;
+    height:24px;
+
+    border:1px solid rgba(0,0,0,.7);
+
+    border-radius:50%;
+
+    position:fixed;
+
+    pointer-events:none;
+
+    transform:translate(-50%, -50%);
+
+    z-index:1000;
+
+    backdrop-filter:blur(10px);
+
+    transition:
+    width .25s ease,
+    height .25s ease,
+    background .25s ease;
+
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+
+    min-height:100vh;
+
+    padding:40px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    position:relative;
+}
+
+.hero-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:.7rem;
+
+    letter-spacing:3px;
+
+    opacity:.6;
+}
+
+.hero-content{
+
+    max-width:1100px;
+
+    margin-left:7vw;
+
+    margin-top:4vh;
+
+    position:relative;
+}
+
+.hero-content::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    border-radius:50%;
+
+    border:
+    1px solid rgba(0,0,0,.06);
+
+    left:-140px;
+    top:-120px;
+
+    z-index:-1;
+}
+
+.hero-content h1{
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:clamp(4rem, 11vw, 10rem);
+
+    line-height:.8;
+
+    font-weight:300;
+
+    letter-spacing:-5px;
+
+    margin-bottom:40px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #111,
+        #ff6ec7,
+        #8b7dff,
+        #111
+    );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    animation:titleGradient 12s ease infinite;
+}
+
+@keyframes titleGradient{
+
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:100%;
+    }
+
+}
+
+.hero-content p{
+
+    max-width:460px;
+
+    line-height:1.9;
+
+    color:var(--gray);
+
+    margin-left:80px;
+}
+
+.hero-footer{
+
+    letter-spacing:6px;
+
+    font-size:.7rem;
+
+    color:var(--gray);
+}
+
+/* =========================================
+   MANIFESTO
+========================================= */
+
+.manifesto{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:120px;
+
+    padding:220px 40px;
+
+    position:relative;
+}
+
+.manifesto::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:900px;
+    height:900px;
+
+    border-radius:50%;
+
+    border:
+    1px dashed rgba(0,0,0,.05);
+
+    top:-200px;
+    right:-200px;
+
+    z-index:-1;
+}
+
+.manifesto h2{
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:4.8rem;
+
+    line-height:.9;
+
+    font-weight:300;
+}
+
+.manifesto p{
+
+    line-height:2;
+
+    color:var(--gray);
+}
+
+/* =========================================
+   PROJECTS
+========================================= */
+
+.projects{
+
+    padding:0 40px 220px;
+
+    position:relative;
+}
+
+.project{
+
+    display:grid;
+
+    grid-template-columns:1.2fr .8fr;
+
+    gap:100px;
+
+    align-items:center;
+
+    margin-bottom:280px;
+
+    position:relative;
+}
+
+.project:nth-child(2){
+
+    margin-left:10vw;
+}
+
+.project:nth-child(3){
+
+    margin-right:8vw;
+}
+
+.project.reverse{
+
+    grid-template-columns:.8fr 1.2fr;
+}
+
+.project.reverse .project-image{
+    order:2;
+}
+
+.project.reverse .project-info{
+    order:1;
+}
+
+/* =========================================
+   IMÁGENES ORGÁNICAS
+========================================= */
+
+.project-image{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:
+    42% 58% 63% 37% /
+    31% 39% 61% 69%;
+
+    transition:
+    border-radius 1.5s ease,
+    transform 1s ease;
+
+    transform:rotate(-3deg);
+
+}
+
+.project-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(255,255,255,.0),
+        rgba(255,255,255,.1)
+    );
+
+    z-index:2;
+}
+
+.project:hover .project-image{
+
+    border-radius:
+    58% 42% 31% 69% /
+    61% 52% 48% 39%;
+
+    transform:
+    rotate(2deg)
+    scale(1.02);
+
+}
+
+.project-image img{
+
+    width:100%;
+
+    height:85vh;
+
+    object-fit:cover;
+
+    filter:
+    saturate(115%)
+    contrast(105%);
+
+    transition:
+    transform 2s ease,
+    filter 1s ease;
+
+}
+
+.project:hover img{
+
+    transform:scale(1.08);
+
+    filter:
+    saturate(135%)
+    contrast(108%);
+}
+
+/* =========================================
+   INFO CIRCULAR
+========================================= */
+
+.project-info{
+
+    position:relative;
+
+    width:480px;
+    height:480px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,.45);
+
+    backdrop-filter:blur(30px);
+
+    border:
+    1px solid rgba(255,255,255,.6);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:70px;
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.08);
+
+}
+
+.project-info::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:18px;
+
+    border-radius:50%;
+
+    border:
+    1px dashed rgba(0,0,0,.08);
+}
+
+.project-info span{
+
+    font-size:.75rem;
+
+    letter-spacing:4px;
+
+    color:#7c6eff;
+
+    margin-bottom:20px;
+}
+
+.project-info h3{
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:4rem;
+
+    line-height:.9;
+
+    font-weight:300;
+
+    margin-bottom:20px;
+}
+
+.project-info p{
+
+    line-height:1.8;
+
+    color:var(--gray);
+
+    max-width:260px;
+}
+
+/* =========================================
+   QUOTE
+========================================= */
+
+.quote{
+
+    padding:280px 40px;
+
+    text-align:center;
+
+    position:relative;
+}
+
+.quote::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(255,120,220,.12),
+        transparent 70%
+    );
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%, -50%);
+
+    filter:blur(80px);
+
+    z-index:-1;
+}
+
+.quote h2{
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:clamp(2.5rem, 6vw, 6rem);
+
+    line-height:1.1;
+
+    font-weight:300;
+
+    max-width:1100px;
+
+    margin:auto;
+}
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact{
+
+    padding:140px 40px 100px;
+
+    position:relative;
+}
+
+.contact::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:1000px;
+    height:1000px;
+
+    border-radius:50%;
+
+    border:
+    1px solid rgba(0,0,0,.04);
+
+    bottom:-500px;
+    left:50%;
+
+    transform:translateX(-50%);
+}
+
+.contact-title h2{
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:7rem;
+
+    font-weight:300;
+
+    margin-bottom:50px;
+}
+
+.contact-links{
+
+    display:flex;
+
+    gap:50px;
+
+    flex-wrap:wrap;
+}
+
+.contact-links a{
+
+    color:var(--text);
+
+    text-decoration:none;
+
+    position:relative;
+
+    transition:
+    transform .3s ease,
+    opacity .3s ease;
+}
+
+.contact-links a:hover{
+
+    transform:translateY(-4px);
+
+    opacity:.6;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:1100px){
+
+    .project-info{
+
+        width:100%;
+        height:auto;
+
+        border-radius:40px;
+    }
+
+}
+
+@media(max-width:900px){
+
+    .manifesto{
+
+        grid-template-columns:1fr;
+
+        gap:60px;
+    }
+
+    .project,
+    .project.reverse{
+
+        grid-template-columns:1fr;
+
+        margin-left:0 !important;
+        margin-right:0 !important;
+    }
+
+    .project.reverse .project-image,
+    .project.reverse .project-info{
+
+        order:unset;
+    }
+
+    .project-image img{
+
+        height:60vh;
+    }
+
+    .manifesto h2,
+    .project-info h3,
+    .contact-title h2{
+
+        font-size:3rem;
+    }
+
+    .hero-content{
+
+        margin-left:0;
+    }
+
+    .hero-content p{
+
+        margin-left:0;
+    }
+
+}
